@@ -1,11 +1,11 @@
 import type { Next, ParameterizedContext } from "koa"
-import type { CarItem } from "./lib/getCarData"
+import type { CarItem } from "./lib/data"
 
 import Koa from "koa"
 import KoaRouter from "@koa/router"
 
 import countBy from "./lib/countBy"
-import getCarData from "./lib/getCarData"
+import getCarData from "./lib/data"
 
 interface AppState {}
 

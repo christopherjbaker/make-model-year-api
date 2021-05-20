@@ -6,7 +6,7 @@ export default function countBy<T extends { [key: string]: any }>(
   const counts: { [key: string]: number } = {}
   item: for (const item of list) {
     for (const filter in filters) {
-      if (item[filter] !== filters[filter]) {
+      if (filters[filter] && item[filter] !== filters[filter]) {
         continue item
       }
     }
