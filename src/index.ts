@@ -2,6 +2,7 @@ import type { Next, ParameterizedContext } from "koa"
 import type { CarItem } from "./lib/data"
 
 import Koa from "koa"
+import koaCors from "@koa/cors"
 import KoaRouter from "@koa/router"
 
 import countBy from "./lib/countBy"
@@ -14,6 +15,9 @@ interface AppContext {
 }
 
 const app = new Koa<AppState, AppContext>()
+
+app.use(koaCors())
+
 const router = new KoaRouter<AppState, AppContext>()
 
 router.get("/years", assureCarData, async (ctx, next) => {
